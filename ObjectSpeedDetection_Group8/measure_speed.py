@@ -48,6 +48,8 @@ def speed_measure_loop(keep_last=True, consecutive=False):
 			print('First:', first_s)
 			if second_s or consecutive:
 				if consecutive:
+					if first_s - second_s < 0.2:
+						continue
 					# Calculate speed for consecutive mode
 					last_speed = round(1 / (first_s - second_s), 2)
 					print(f'Speed: {last_speed} o/s')
