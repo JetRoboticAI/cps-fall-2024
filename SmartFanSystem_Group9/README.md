@@ -43,7 +43,7 @@ To run this project, the following software and hardware are required:
 To run the application, simply execute the Python script:
 
 ```bash
-python gui.py
+python main.py
 ```
 
 This will open the GUI window where you can interact with the smart plug and sensor data.
