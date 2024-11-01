@@ -57,3 +57,57 @@ This project uses an ESP8266 to log activation events by sending timestamps to a
    ```cpp
    const char* ssid = "your_ssid";
    const char* password = "your_password";
+
+
+# Flask Web Application for Recent Timestamps
+
+This Flask application displays the current time and logs the last 10 timestamps when updates are made at one-minute intervals. It uses an HTML template with inline JavaScript to dynamically fetch and update the display on the web page.
+
+## Features
+- Displays the current time and updates it every minute.
+- Logs and displays the last 10 update times.
+- Simple and responsive HTML interface with inline JavaScript for real-time updates.
+
+## Project Structure
+- **Flask Application**: Hosts the `/` endpoint to serve the HTML page and the `/time` endpoint for returning JSON data of the current time and recent timestamps.
+- **HTML Template with JavaScript**: Fetches new timestamp data from the server every minute, updating the display without requiring a page reload.
+
+## Requirements
+- **Python 3** and **Flask**
+  - Install Flask using:
+    ```bash
+    pip install Flask
+    ```
+
+## Usage
+
+1. **Run the Application**:
+   - Save the code in a file, for example, `app.py`.
+   - Start the server by running:
+     ```bash
+     python app.py
+     ```
+   - The server will run on `http://127.0.0.1:5000/` by default.
+
+2. **Access the Web Page**:
+   - Open a web browser and go to `http://127.0.0.1:5000/`.
+   - The page will load the current time and recent timestamps.
+   - Every minute, the page will automatically update with the latest time and log it if one minute has passed since the last update.
+
+## File Structure
+- **Main Application (`app.py`)**: Contains the Flask server code, HTML template, and time logging logic.
+- **HTML & JavaScript**: The HTML template, defined within `app.py`, includes JavaScript that fetches the latest timestamp data from the `/time` endpoint every minute.
+
+## Endpoints
+
+- `/`: Main route serving the HTML page.
+- `/time`: Returns a JSON response with:
+  - `current_time`: Current server time.
+  - `recent_times`: List of the last 10 timestamps.
+
+## Troubleshooting
+- **Server Not Running**: Ensure Flask is installed and the correct Python environment is activated.
+- **Automatic Updates Not Working**: Check that JavaScript is enabled in your browser. Verify that the `/time` endpoint is accessible.
+
+## License
+This project is open-source and available under the MIT License.
