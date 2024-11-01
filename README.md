@@ -59,6 +59,7 @@ This project uses an ESP8266 to log activation events by sending timestamps to a
    const char* password = "your_password";
 
 
+
 # Flask Web Application for Recent Timestamps
 
 This Flask application displays the current time and logs the last 10 timestamps when updates are made at one-minute intervals. It uses an HTML template with inline JavaScript to dynamically fetch and update the display on the web page.
@@ -105,9 +106,3 @@ This Flask application displays the current time and logs the last 10 timestamps
   - `current_time`: Current server time.
   - `recent_times`: List of the last 10 timestamps.
 
-## Troubleshooting
-- **Server Not Running**: Ensure Flask is installed and the correct Python environment is activated.
-- **Automatic Updates Not Working**: Check that JavaScript is enabled in your browser. Verify that the `/time` endpoint is accessible.
-
-## License
-This project is open-source and available under the MIT License.
